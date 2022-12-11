@@ -1,5 +1,6 @@
 SRCS		=	srcs/parsing.c \
-				srcs/pile.c \
+				srcs/pile_exodus.c \
+				srcs/pile_genesis.c \
 				srcs/push_swap.c \
 
 OBJS		=	${SRCS:.c=.o}

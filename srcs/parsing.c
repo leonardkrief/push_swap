@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 19:12:26 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/11 07:13:02 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/11 07:19:10 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,8 @@ int	ft_valid(t_pile *begin, t_pile *a, char *str)
 	return (ft_validint(str) + ft_noduplicate(begin, a, str, 0));
 }
 
-t_pile	*ft_parse(t_pile *a, char *str)
+t_pile	*ft_parse(t_pile *a, char *str, int i)
 {
-	int		i;
 	t_pile	*begin;
 	char	**tmp;
 
@@ -85,7 +84,6 @@ t_pile	*ft_parse(t_pile *a, char *str)
 	tmp = ft_split(str, " \t\n\v\f\r");
 	if (!tmp)
 		return (NULL);
-	i = -1;
 	while (tmp[++i])
 	{
 		if (ft_valid(begin, a, tmp[i]) == 0)
@@ -107,7 +105,7 @@ t_pile	*ft_parse(t_pile *a, char *str)
 
 t_pile	*get_pile(int ac, char **av)
 {
-	int	i;
+	int		i;
 	t_pile	*begin;
 	t_pile	*tmp;
 
@@ -115,7 +113,7 @@ t_pile	*get_pile(int ac, char **av)
 	i = 0;
 	while (++i < ac)
 	{
-		tmp = ft_parse(begin, av[i]);
+		tmp = ft_parse(begin, av[i], -1);
 		if (!tmp)
 		{
 			if (begin)
