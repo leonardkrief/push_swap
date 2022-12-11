@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:25:45 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/11 06:17:30 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/11 07:09:36 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int	ft_pop(t_pile **begin);
 t_pile	*ft_push_pile(t_pile **begin, t_pile *tmp);
 void	free_pile(t_pile **begin);
 void	ft_printpile(t_pile *begin);
+t_pile	*ft_merge_pile(t_pile *begin, t_pile *tmp);
 
 #endif

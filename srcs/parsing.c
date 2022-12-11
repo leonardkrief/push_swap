@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 19:12:26 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/11 06:33:00 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/11 07:13:02 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ int	ft_validint(char *str)
 	{
 		signe = (str[i] == '+') - (str[i] == '-');
 		i++;
-	}	
+	}
+	if (str[i] == '\0')
+		return (-1);
 	while (str[i] >= '0' && str[i] <= '9' && n <= INT_MAX)
 	{
 		n = 10 * n + str[i] - '0';
@@ -84,7 +86,7 @@ t_pile	*ft_parse(t_pile *a, char *str)
 	if (!tmp)
 		return (NULL);
 	i = -1;
-	while (tmp[i] && tmp[++i])
+	while (tmp[++i])
 	{
 		if (ft_valid(begin, a, tmp[i]) == 0)
 		{
@@ -96,6 +98,7 @@ t_pile	*ft_parse(t_pile *a, char *str)
 			while (tmp[i])
 				free(tmp[i++]);
 			free_pile(&begin);
+			i--;
 		}
 	}
 	free(tmp);
@@ -120,13 +123,10 @@ t_pile	*get_pile(int ac, char **av)
 			ft_putstr_fd("Error\n", 2);
 			exit(-1);
 		}
-		if (begin == NULL)
+		else if (begin == NULL)
 			begin = tmp;
 		else
-		{
-			begin->prev->next = tmp;
-			tmp->prev->next = begin;
-		}
+			ft_merge_pile(begin, tmp);
 	}
 	return (begin);
 }
