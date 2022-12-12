@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:25:45 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/12 19:22:37 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/12 19:42:18 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_pile
 
 // cost.c
 t_pile				*set_minx(t_pile *a, int x, int size);
-void				get_x_values(t_pile *a);
+void				set_xvalues(t_pile *a, int size);
 
 // parsing.c
 int					ft_validint(char *str);
