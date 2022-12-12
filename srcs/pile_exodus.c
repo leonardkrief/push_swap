@@ -1,16 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pile_exode.c                                       :+:      :+:    :+:   */
+/*   pile_exodus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 03:42:15 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/11 07:24:43 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/12 19:34:03 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	ft_sizepile(t_pile *a)
+{
+	t_pile	*start;
+	int		n;
+
+	if (a == NULL)
+		return (0);
+	n = 1;
+	start = a;
+	a = a->next;
+	while (start != a)
+	{
+		n++;
+		a = a->next;
+	}
+	return (n);
+}
 
 //il faudra enlever cette fonction qui comporte printf
 void	ft_printpile(t_pile *begin)
@@ -22,10 +40,10 @@ void	ft_printpile(t_pile *begin)
 	{
 		while (start != begin->next)
 		{
-			printf("(%d)\n", begin->n);
+			printf("(%-8d) x=%d\n", begin->n, begin->x);
 			begin = begin->next;
 		}
-		printf("(%d)\n", begin->n);
+		printf("(%-8d) x=%d\n", begin->n, begin->x);
 	}
 }
 

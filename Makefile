@@ -1,4 +1,5 @@
-SRCS		=	srcs/parsing.c \
+SRCS		=	srcs/cost.c \
+				srcs/parsing.c \
 				srcs/pile_exodus.c \
 				srcs/pile_genesis.c \
 				srcs/push_swap.c \
@@ -24,9 +25,11 @@ ${PUSH_SWAP}:	${OBJS}
 all:	${PUSH_SWAP}
 
 clean:
+		make clean -C libft
 		${RM} ${OBJS}
 
 fclean:	clean
+		make fclean -C libft
 		${RM} ${PUSH_SWAP}
 
 re:		fclean all
