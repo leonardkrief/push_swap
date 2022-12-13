@@ -4,6 +4,7 @@ SRCS		=	srcs/making_b.c \
 				srcs/pile_genesis.c \
 				srcs/pile_leviticus.c \
 				srcs/push_swap.c \
+				srcs/sort.c \
 
 OBJS		=	${SRCS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 03:42:15 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 00:49:43 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/13 03:42:24 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,15 @@ void	revrotate(t_pile **a, char *str)
 
 void	swap(t_pile **a, char *str)
 {
-	int	tmp;
+	t_pile	*tmp;
 
 	if (*a == NULL || (*a) == (*a)->next)
 		return;
-	tmp = (*a)->n;
-	(*a)->n = (*a)->next->n;
-	(*a)->next->n = tmp;
+	tmp = ft_pop(a);
+	tmp->prev = (*a);
+	tmp->next = (*a)->next;
+	tmp->prev->next = tmp;
+	tmp->next->prev = tmp;
 	ft_putstr_fd(str, 1);
 }
 

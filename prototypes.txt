@@ -1,7 +1,5 @@
 // making_b.c
 void	set_xvalues(t_pile *a, int size);
-void	set_yvalues(t_pile *a, int size);
-void	reset_yvalues(t_pile *a);
 unsigned int	ft_sqrt(unsigned int n);
 t_pile *makeb(t_pile **a, unsigned int size);
 
@@ -34,6 +32,9 @@ void	both(void (*f)(t_pile **, char *), t_pile **a, t_pile **b, char *str);
 // push_swap.c
 int	main(int ac, char **av);
 
+// sort.c
+void	three_sort(t_pile **a);
 
 
-../prototypes_generator/prototypes srcs/making_b.c srcs/parsing.c srcs/pile_exodus.c srcs/pile_genesis.c srcs/pile_leviticus.c srcs/push_swap.c
+
+../prototypes_generator/prototypes srcs/making_b.c srcs/parsing.c srcs/pile_exodus.c srcs/pile_genesis.c srcs/pile_leviticus.c srcs/push_swap.c srcs/sort.c

@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:47:41 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 02:36:14 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/13 03:22:28 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,6 @@ t_pile *makeb(t_pile **a, unsigned int size)
 			rotate(a, "ra\n");
 		if (i > size)
 			i = 0;
-		ft_printpile(*a, "a\n");
-		printf("\n");
-		ft_printpile(b, "b\n");
-		printf("\n");
 	}
 	return (b);
 }

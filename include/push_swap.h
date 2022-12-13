@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:25:45 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 02:36:38 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/13 03:52:40 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,6 @@ void	revrotate(t_pile **a, char *str);
 void	swap(t_pile **a, char *str);
 void	both(void (*f)(t_pile **, char *), t_pile **a, t_pile **b, char *str);
 
+// sort.c
+void	three_semisort(t_pile **a);
 #endif

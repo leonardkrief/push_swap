@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 06:01:06 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 02:21:13 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/13 03:52:57 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ int	main(int ac, char **av)
 	size = ft_sizepile(a);
 	set_xvalues(a, size);
 	b = makeb(&a, size);
+	ft_printpile(a, "a\n");
+	printf("\n");
+	ft_printpile(b, "b\n");
+	printf("\n\n");
+	
+	three_semisort(&a);
+	ft_printpile(a, "a\n");
+	printf("\n");
 	free_pile(&a);
 	free_pile(&b);
 }
