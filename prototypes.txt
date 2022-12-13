@@ -33,8 +33,11 @@ void	both(void (*f)(t_pile **, char *), t_pile **a, t_pile **b, char *str);
 int	main(int ac, char **av);
 
 // sort.c
-void	three_sort(t_pile **a);
+void	three_semisort(t_pile **a);
+void	set_pos(t_pile *a);
+t_pile	*get_insertion(t_pile *a, t_pile *b);
+void	get_costs(t_pile *a, t_pile *b, unsigned int sizea, unsigned int sizeb);
 
 
 
-../prototypes_generator/prototypes srcs/making_b.c srcs/parsing.c srcs/pile_exodus.c srcs/pile_genesis.c srcs/pile_leviticus.c srcs/push_swap.c srcs/sort.c
+../prototypes_generator/prototypes srcs/making_b.c 

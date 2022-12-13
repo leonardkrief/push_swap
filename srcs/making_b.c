@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:47:41 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 03:22:28 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/13 14:51:38 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	set_xvalues(t_pile *a, int size)
 
 unsigned int	ft_sqrt(unsigned int n)
 {
-	unsigned int sqrt;
+	unsigned int	sqrt;
 
 	if (n == 0)
 		return (0);
@@ -52,13 +52,12 @@ unsigned int	ft_sqrt(unsigned int n)
 	return (sqrt - 1);
 }
 
-t_pile *makeb(t_pile **a, unsigned int size)
+t_pile	*makeb(t_pile **a, unsigned int size)
 {
 	t_pile			*b;
 	unsigned int	i;
 	unsigned int	sqrt;
 	unsigned int	pivot;
-	// int track = 1;
 
 	b = NULL;
 	sqrt = ft_sqrt(size);
@@ -66,10 +65,9 @@ t_pile *makeb(t_pile **a, unsigned int size)
 	i = 0;
 	while (size > 3)
 	{
-		// printf("%d_______________________________\n", track++);
-		if (((*a)->x == pivot && (*a)->x > 3) || (++i > size))
+		if (((*a)->x == pivot) || (++i > size))
 			pivot = (pivot > sqrt) * (pivot - sqrt);
-		if ((*a)->x >= pivot && (*a)->x > 3 && --size > 0)
+		if ((*a)->x >= pivot && --size > 0)
 			push(a, &b, "pb\n");
 		if ((*a)->x < pivot || (*a)->x <= 3)
 			rotate(a, "ra\n");

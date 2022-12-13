@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 03:42:15 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 03:42:24 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/13 14:52:18 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	push(t_pile **a, t_pile **b, char *str)
 {
 	if (*a == NULL)
-		return;
+		return ;
 	ft_push(b, ft_pop(a));
 	ft_putstr_fd(str, 1);
 }
@@ -23,7 +23,7 @@ void	push(t_pile **a, t_pile **b, char *str)
 void	rotate(t_pile **a, char *str)
 {
 	if (*a == NULL || (*a) == (*a)->next)
-		return;
+		return ;
 	*a = (*a)->next;
 	ft_putstr_fd(str, 1);
 }
@@ -31,7 +31,7 @@ void	rotate(t_pile **a, char *str)
 void	revrotate(t_pile **a, char *str)
 {
 	if (*a == NULL || (*a) == (*a)->next)
-		return;
+		return ;
 	*a = (*a)->prev;
 	ft_putstr_fd(str, 1);
 }
@@ -41,7 +41,7 @@ void	swap(t_pile **a, char *str)
 	t_pile	*tmp;
 
 	if (*a == NULL || (*a) == (*a)->next)
-		return;
+		return ;
 	tmp = ft_pop(a);
 	tmp->prev = (*a);
 	tmp->next = (*a)->next;

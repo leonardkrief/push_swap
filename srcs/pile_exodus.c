@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 03:42:15 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 02:29:49 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/13 16:11:24 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ unsigned int	ft_sizepile(t_pile *a)
 	return (n);
 }
 
-//il faudra enlever cette fonction qui comporte printf
 void	ft_printpile(t_pile *begin, char *str)
 {
 	t_pile	*start;
@@ -43,10 +42,32 @@ void	ft_printpile(t_pile *begin, char *str)
 		{
 			while (start != begin->next)
 			{
-				printf("(%-8d) x=%d\n", begin->n, begin->x);
+				printf("%-8d x=%-3d   cost = %-3d   path = %2d   x_to_push = %-3d   pos = %2d\n", begin->n, begin->x, begin->cost, begin->path, begin->x_to_push, begin->pos);
 				begin = begin->next;
 			}
-			printf("(%-8d) x=%d\n", begin->n, begin->x);
+			printf("%-8d x=%-3d   cost = %-3d   path = %2d   x_to_push = %-3d   pos = %2d\n", begin->n, begin->x, begin->cost, begin->path, begin->x_to_push, begin->pos);
+		}
+	}
+	// se rappeller de retirer cette fonction avant de push
+}
+
+void	ft_printpile_rev(t_pile *begin, char *str)
+{
+	t_pile	*start;
+
+	if (begin && str)
+	{
+		printf("reverted-");
+		printf("%s", str);
+		start = begin;
+		if (begin != NULL)
+		{
+			while (start != begin->prev)
+			{
+				printf("%-8d x=%-3d   cost = %-3d   path = %2d   pos = %2d\n", begin->n, begin->x, begin->cost, begin->path, begin->pos);
+				begin = begin->prev;
+			}
+			printf("%-8d x=%-3d   cost = %-3d   path = %2d\n", begin->n, begin->x, begin->cost, begin->path);
 		}
 	}
 	// se rappeller de retirer cette fonction avant de push
