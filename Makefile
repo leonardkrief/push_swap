@@ -1,7 +1,8 @@
-SRCS		=	srcs/cost.c \
+SRCS		=	srcs/making_b.c \
 				srcs/parsing.c \
 				srcs/pile_exodus.c \
 				srcs/pile_genesis.c \
+				srcs/pile_leviticus.c \
 				srcs/push_swap.c \
 
 OBJS		=	${SRCS:.c=.o}

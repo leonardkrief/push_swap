@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 19:12:26 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/12 17:45:53 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/13 02:07:53 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ t_pile	*ft_parse(t_pile *a, char *str, int i)
 	{
 		if (ft_valid(begin, a, tmp[i]) == 0)
 		{
-			ft_push_end(&begin, ft_atoi(tmp[i]));
+			ft_push_end(&begin, new_pile(ft_atoi(tmp[i])));
 			free(tmp[i]);
 		}
 		else

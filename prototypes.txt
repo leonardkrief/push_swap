@@ -1,6 +1,9 @@
-// cost.c
-t_pile	*set_minx(t_pile *a, int x, int size);
+// making_b.c
 void	set_xvalues(t_pile *a, int size);
+void	set_yvalues(t_pile *a, int size);
+void	reset_yvalues(t_pile *a);
+unsigned int	ft_sqrt(unsigned int n);
+t_pile *makeb(t_pile **a, unsigned int size);
 
 // parsing.c
 int	ft_validint(char *str);
@@ -10,17 +13,27 @@ t_pile	*ft_parse(t_pile *a, char *str, int i);
 t_pile	*get_pile(int ac, char **av);
 
 // pile_exodus.c
-int	ft_sizepile(t_pile *a);
-void	ft_printpile(t_pile *begin);
+unsigned int	ft_sizepile(t_pile *a);
+void	ft_printpile(t_pile *begin, char *str);
 t_pile	*ft_merge_pile(t_pile *begin, t_pile *tmp);
 
 // pile_genesis.c
 t_pile	*new_pile(int n);
-t_pile	*ft_push(t_pile **begin, int n);
-t_pile	*ft_push_end(t_pile **begin, int n);
-int	ft_pop(t_pile **begin);
+t_pile	*ft_push(t_pile **begin, t_pile *new);
+t_pile	*ft_push_end(t_pile **begin, t_pile *new);
+t_pile	*ft_pop(t_pile **begin);
 void	free_pile(t_pile **begin);
+
+// pile_leviticus.c
+void	push(t_pile **a, t_pile **b, char *str);
+void	rotate(t_pile **a, char *str);
+void	revrotate(t_pile **a, char *str);
+void	swap(t_pile **a, char *str);
+void	both(void (*f)(t_pile **, char *), t_pile **a, t_pile **b, char *str);
 
 // push_swap.c
 int	main(int ac, char **av);
 
+
+
+../prototypes_generator/prototypes srcs/making_b.c srcs/parsing.c srcs/pile_exodus.c srcs/pile_genesis.c srcs/pile_leviticus.c srcs/push_swap.c

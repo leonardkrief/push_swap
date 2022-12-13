@@ -6,13 +6,13 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 03:42:15 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/12 19:34:03 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/13 02:29:49 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_sizepile(t_pile *a)
+unsigned int	ft_sizepile(t_pile *a)
 {
 	t_pile	*start;
 	int		n;
@@ -31,20 +31,25 @@ int	ft_sizepile(t_pile *a)
 }
 
 //il faudra enlever cette fonction qui comporte printf
-void	ft_printpile(t_pile *begin)
+void	ft_printpile(t_pile *begin, char *str)
 {
 	t_pile	*start;
 
-	start = begin;
-	if (begin != NULL)
+	if (begin && str)
 	{
-		while (start != begin->next)
+		printf("%s", str);
+		start = begin;
+		if (begin != NULL)
 		{
+			while (start != begin->next)
+			{
+				printf("(%-8d) x=%d\n", begin->n, begin->x);
+				begin = begin->next;
+			}
 			printf("(%-8d) x=%d\n", begin->n, begin->x);
-			begin = begin->next;
 		}
-		printf("(%-8d) x=%d\n", begin->n, begin->x);
 	}
+	// se rappeller de retirer cette fonction avant de push
 }
 
 t_pile	*ft_merge_pile(t_pile *begin, t_pile *tmp)
