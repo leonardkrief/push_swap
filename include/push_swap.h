@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:25:45 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 15:38:20 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/14 06:52:04 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_pile
 // making_b.c
 void	set_xvalues(t_pile *a, int size);
 unsigned int	ft_sqrt(unsigned int n);
-t_pile *makeb(t_pile **a, unsigned int size);
+t_pile	*makeb(t_pile **a, unsigned int size);
 
 // parsing.c
 int	ft_validint(char *str);
@@ -75,5 +75,7 @@ void	three_semisort(t_pile **a);
 void	set_pos(t_pile *a);
 t_pile	*get_insertion(t_pile *a, t_pile *b);
 void	get_costs(t_pile *a, t_pile *b, unsigned int sizea, unsigned int sizeb);
+void	step_sort(t_pile **a, t_pile **b, unsigned int sizea, unsigned int sizeb);
+void	final_set(t_pile **a, int sizea);
 
 #endif

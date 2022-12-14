@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 06:01:06 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 16:01:15 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/14 07:02:01 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,19 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	if (ac >= 2)
+	{
 		a = get_pile(ac, av);
-	sizea = ft_sizepile(a);
-	set_xvalues(a, sizea);
-	b = makeb(&a, sizea);
-	ft_printpile(a, "\n----a----\n");
-	three_semisort(&a);
-	sizea = ft_sizepile(a);
-	sizeb = ft_sizepile(b);
-	get_costs(a, b, sizea, sizeb);
-	printf("\n-----------after costs----------\n");
-	ft_printpile(a, "----a----\n");
-	printf("\n");
-	ft_printpile(b, "----b----\n");
-	printf("\n");
-	free_pile(&a);
-	free_pile(&b);
+		sizea = ft_sizepile(a);
+		set_xvalues(a, sizea);
+		b = makeb(&a, sizea);
+		three_semisort(&a);
+		sizea = ft_sizepile(a);
+		sizeb = ft_sizepile(b);
+		while (b != NULL)
+			step_sort(&a, &b, sizea++, sizeb--);
+		final_set(&a, sizea);
+		ft_printpile(a, "\n-------a-------\n");
+		// ft_printpile(b, "-------b-------\n");
+		free_pile(&a);
+	}
 }

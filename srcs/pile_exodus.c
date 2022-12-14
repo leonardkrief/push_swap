@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 03:42:15 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 16:11:24 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/14 06:38:50 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,24 @@ void	ft_printpile(t_pile *begin, char *str)
 {
 	t_pile	*start;
 
-	if (begin && str)
-	{
+	if (str)
 		printf("%s", str);
+	if (begin)
+	{
 		start = begin;
 		if (begin != NULL)
 		{
 			while (start != begin->next)
 			{
-				printf("%-8d x=%-3d   cost = %-3d   path = %2d   x_to_push = %-3d   pos = %2d\n", begin->n, begin->x, begin->cost, begin->path, begin->x_to_push, begin->pos);
+				printf("%-8d x=%-3d   cost = %-3d   path = %2d   x_to_pushon = %-3d   pos = %2d\n", begin->n, begin->x, begin->cost, begin->path, begin->x_to_push, begin->pos);
 				begin = begin->next;
 			}
-			printf("%-8d x=%-3d   cost = %-3d   path = %2d   x_to_push = %-3d   pos = %2d\n", begin->n, begin->x, begin->cost, begin->path, begin->x_to_push, begin->pos);
+			printf("%-8d x=%-3d   cost = %-3d   path = %2d   x_to_pushon = %-3d   pos = %2d\n", begin->n, begin->x, begin->cost, begin->path, begin->x_to_push, begin->pos);
 		}
 	}
+	else
+		printf("NULL\n");
+		
 	// se rappeller de retirer cette fonction avant de push
 }
 
