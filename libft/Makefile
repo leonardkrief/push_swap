@@ -43,6 +43,7 @@ SRCS		=	ft_atoi.c \
 				ft_lstmap.c \
 				ft_lstnew.c \
 				ft_lstsize.c \
+				get_next_line.c \
 
 OBJS		= 	${SRCS:.c=.o}
 HDRS		= 	-I

@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 01:50:07 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/13 14:49:00 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/15 19:13:16 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,24 @@ t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
 
 void	ft_lstprint(t_list *lst);
+
+/*********************/
+/****GET_NEXT_LINE****/
+/*********************/
+
+# ifndef GET_NEXT_LINE_H
+#  define GET_NEXT_LINE_H
+
+#  ifndef BUFFER_SIZE
+#   define BUFFER_SIZE 1000
+#  endif
+
+void	ft_reset_buff(char *buff);
+char	*ft_strjoin_gnl(char const *res, char const *buff);
+void	aux_gnl(char **res, char *buff);
+char	*one_line(char *buff, int fd);
+char	*get_next_line(int fd);
+
+# endif
 
 #endif
