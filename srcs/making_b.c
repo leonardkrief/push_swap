@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:47:41 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/15 19:40:44 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/16 17:09:13 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,15 @@ t_pile	*makeb(t_pile **a, unsigned int size)
 {
 	t_pile			*b;
 	unsigned int	i;
-	unsigned int	sqrt;
 	unsigned int	pivot;
 
 	b = NULL;
-	sqrt = ft_sqrt(size);
-	pivot = size / 2;
+	pivot = ((int)(0.6 * (double)size));
 	i = 0;
 	while (size > 3)
 	{
 		if (((*a)->x == pivot) || (++i > size))
-			pivot = (pivot > sqrt) * (pivot - sqrt);
+			pivot = ft_max(0, ft_min(pivot - size / 4, pivot - 1));
 		if ((*a)->x >= pivot && --size > 0)
 			push(a, &b, "pb\n");
 		if ((*a)->x < pivot || (*a)->x <= 3)

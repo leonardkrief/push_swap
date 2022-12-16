@@ -4,7 +4,8 @@ SRCS		=	srcs/making_b.c \
 				srcs/pile_genesis.c \
 				srcs/pile_leviticus.c \
 				srcs/push_swap.c \
-				srcs/sort.c \
+				srcs/sort_deuteronomy.c \
+				srcs/sort_genesis.c \
 
 SRCS_BONUS	=	srcs/checker.c \
 				srcs/making_b.c \
@@ -12,7 +13,8 @@ SRCS_BONUS	=	srcs/checker.c \
 				srcs/pile_exodus.c \
 				srcs/pile_genesis.c \
 				srcs/pile_leviticus.c \
-				srcs/sort.c \
+				srcs/sort_deuteronomy.c \
+				srcs/sort_genesis.c \
 
 OBJS		=	${SRCS:.c=.o}
 OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
@@ -23,7 +25,7 @@ CHECKER		=	checker
 INCLUDE		=	-Iinclude
 LIBS		=	libft/libft.a
 
-CC			=	gcc
+CC			=	cc
 RM			=	rm -rf
 CFLAGS		=	-Wall -Wextra -Werror -g3
 

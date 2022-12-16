@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 01:50:07 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/15 19:13:16 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/16 18:02:17 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ft_lstprint(t_list *lst);
 #  define GET_NEXT_LINE_H
 
 #  ifndef BUFFER_SIZE
-#   define BUFFER_SIZE 1000
+#   define BUFFER_SIZE 1
 #  endif
 
 void	ft_reset_buff(char *buff);

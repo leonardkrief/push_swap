@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 06:01:06 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/14 16:32:30 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/16 18:36:12 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	main(int ac, char **av)
 {
 	unsigned int	sizea;
 	unsigned int	sizeb;
-	t_pile	*a;
-	t_pile	*b;
+	t_pile			*a;
+	t_pile			*b;
 
 	a = NULL;
 	if (ac >= 2)
@@ -32,8 +32,7 @@ int	main(int ac, char **av)
 		while (b != NULL)
 			step_sort(&a, &b, sizea++, sizeb--);
 		final_set(&a, sizea);
-		// ft_printpile(a, "\n-------a-------\n");
-		// ft_printpile(b, "-------b-------\n");
 		free_pile(&a);
 	}
+	return (0);
 }
