@@ -6,11 +6,26 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:47:41 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/16 17:09:13 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/16 19:35:45 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	is_sorted(t_pile *a, int sizea)
+{
+	int	i;
+
+	i = 0;
+	while (i + 1 < sizea)
+	{
+		if (a->n > a->next->n)
+			return (-1);
+		a = a->next;
+		i++;
+	}
+	return (0);
+}
 
 void	set_xvalues(t_pile *a, int size)
 {
@@ -38,18 +53,6 @@ void	set_xvalues(t_pile *a, int size)
 		min->x = x;
 		x++;
 	}
-}
-
-unsigned int	ft_sqrt(unsigned int n)
-{
-	unsigned int	sqrt;
-
-	if (n == 0)
-		return (0);
-	sqrt = 1;
-	while (sqrt * sqrt < n)
-		sqrt++;
-	return (sqrt - 1);
 }
 
 t_pile	*makeb(t_pile **a, unsigned int size)

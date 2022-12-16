@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:25:45 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/16 19:00:54 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/16 19:34:00 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void				ft_checksort(t_pile **a, t_pile **b);
 int					main(int ac, char **av);
 
 // making_b.c
+int					is_sorted(t_pile *a, int sizea);
 void				set_xvalues(t_pile *a, int size);
-unsigned int		ft_sqrt(unsigned int n);
 t_pile				*makeb(t_pile **a, unsigned int size);
 
 // parsing.c
