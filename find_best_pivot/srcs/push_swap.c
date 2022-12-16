@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 06:01:06 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/16 00:20:34 by lkrief           ###   ########.fr       */
+/*   Updated: 2022/12/16 05:21:05 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ int	main(int ac, char **av)
 	t_pile	*b;
 
 	a = NULL;
-	unsigned int	moyenne_best_pivot = 0;
-	unsigned int	moyenne_best_nb_coups = 0;
-	int	i = 0;
-	while (i++ < 100)
-	{
+	// unsigned int	moyenne_best_pivot = 0;
+	// unsigned int	moyenne_best_nb_coups = 0;
 		if (ac >= 2)
 		{
 			a = get_pile(ac, av);
@@ -56,10 +53,9 @@ int	main(int ac, char **av)
 			}
 			printf("SIZE = %d   BEST_PIVOT = %d   BEST_NB_COUPS = %d\n", sizea, BEST_PIVOT, BEST_NB_COUPS);
 			//printf("\n\nSIZE = %d\nBEST_PIVOT = %d\nBEST_NB_COUPS = %d\n", sizea, BEST_PIVOT, BEST_NB_COUPS);
-			moyenne_best_pivot += BEST_PIVOT;
-			moyenne_best_nb_coups += BEST_NB_COUPS;
+			// moyenne_best_pivot += BEST_PIVOT;
+			// moyenne_best_nb_coups += BEST_NB_COUPS;
 		}
-	}
-	printf("moyenne best pivot = %d   moyenne best nb coups = %d  ", moyenne_best_pivot, moyenne_best_nb_coups);
-	printf("moyenne best pivot = %f * sizea   moyenne best nb coups = %f * sizea", (double)moyenne_best_pivot/(double)sizea, (double)moyenne_best_nb_coups/(double)sizea);
+	// printf("moyenne best pivot = %d   moyenne best nb coups = %d  ", moyenne_best_pivot, moyenne_best_nb_coups);
+	// printf("moyenne best pivot = %f * sizea   moyenne best nb coups = %f * sizea", (double)moyenne_best_pivot/(double)sizea, (double)moyenne_best_nb_coups/(double)sizea);
 }
