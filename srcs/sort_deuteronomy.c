@@ -6,7 +6,7 @@
 /*   By: lkrief <lkrief@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 02:37:09 by lkrief            #+#    #+#             */
-/*   Updated: 2022/12/16 16:45:22 by lkrief           ###   ########.fr       */
+/*   Updated: 2023/01/03 04:59:38 by lkrief           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	final_set(t_pile **a, int sizea)
 	top = *a;
 	while (top->x != 1)
 		top = top->next;
-	if (top->pos < sizea - top->pos + 1)
+	if (top->pos <= sizea - top->pos + 1)
 	{
 		while ((*a)->x != 1)
 			rotate(a, "ra\n");
